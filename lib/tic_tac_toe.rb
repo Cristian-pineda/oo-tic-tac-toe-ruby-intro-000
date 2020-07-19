@@ -38,12 +38,8 @@ def position_taken?(index)
     end
 end
 
-def valid_move?(index)
-    if index.between?(0, 8) == false || position_taken?(index) == true
-        false
-    elsif index.between?(0, 8) == true || position_taken?(index) == false
-        true
-    end
+def valid_move?(input)
+  input.to_i.between?(1,9) && !position_taken?(input.to_i-1)
 end
 
 def turn_count
